@@ -1,7 +1,7 @@
 <template>
   <pre
     class="
-      font-mono
+     font-mono
       text-sm
       px-4
       py-1
@@ -22,14 +22,16 @@ export default {
   name: 'Snippet',
   data() {
     return {
-      snippets: `<sidenav-items-section name="Apps">
-      <sidenav-item title="All Apps" to="/">
-        <all-apps-icon />
-      </sidenav-item>
-      <sidenav-item title="Updates" to="/admin/updates">
-        <updates-icon />
-      </sidenav-item>
-    </sidenav-items-section>`,
+      snippets: `<Accordion>
+    <template #item>
+      <document-icon /> <span class="pl-3">Documents</span>
+    </template>
+    <template #panel>
+      <sidenav-item title="Taxes" to="/documents/taxes" />
+      <sidenav-item title="Travel" to="/documents/travel" />
+      <sidenav-item title="Insurance" to="/documents/insurance" />
+    </template>
+   </Accordion>`,
     }
   },
 }

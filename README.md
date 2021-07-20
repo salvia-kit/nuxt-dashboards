@@ -1,5 +1,7 @@
 # Salvia-kit Dashboard v8 Nuxt.js
 
+![Salvia-kit Dashboard v8](https://res.cloudinary.com/beloved/image/upload/v1626789451/dashboards/dashv8_htx7sn.jpg)
+
 ## 📋 Documentation
 You can see the documentation on [http://localhost:3000/guides/documentation](http://localhost:3000/guides/documentation)
 
