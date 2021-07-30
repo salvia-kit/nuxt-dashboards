@@ -7,17 +7,13 @@
     >
       <slot name="item" />
       <span class="ml-auto">
-        <span v-if="isActive">
-          <angle-down-icon />
-        </span>
-        <span v-else>
-          <angle-right-icon />
-        </span>
+        <angle-down-icon v-show="isActive" />
+        <angle-right-icon v-show="!isActive" />
       </span>
     </div>
     <div
       id="accordion"
-      ref="myText"
+      ref="accordionRef"
       :style="[isActive ? { height: computedHeight } : {}]"
       class="
         -mt-5
@@ -54,10 +50,10 @@ export default {
       this.isActive = !this.isActive
     },
     initHeight() {
-      this.$refs.myText.style.height = 'auto'
+      this.$refs.accordionRef.style.height = 'auto'
 
-      this.computedHeight = getComputedStyle(this.$refs.myText).height
-      this.$refs.myText.style.height = '0'
+      this.computedHeight = getComputedStyle(this.$refs.accordionRef).height
+      this.$refs.accordionRef.style.height = '0'
     },
   },
 }
