@@ -50,8 +50,7 @@ export default {
 }
 </script>
 
-<style scoped></style>
-<style>
+<style scoped>
 .scrollbar::-webkit-scrollbar {
   width: 0;
   background: transparent; /* hide sidenav scrollbar on Chrome, Opera and other webkit Browsers*/
