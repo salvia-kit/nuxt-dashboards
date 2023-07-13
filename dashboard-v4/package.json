@@ -1,0 +1,39 @@
+{
+  "name": "salvia-kit-dashboard-v4-nuxt",
+  "version": "1.0.0",
+  "author": {
+    "name": "Enoch Ndika"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ui",
+    "vue",
+    "components",
+    "dashboard",
+    "admin",
+    "tailwindcss",
+    "nuxt",
+    "Nuxt.js",
+    "layout"
+  ],
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/tailwindcss": "^6.7.2",
+    "@types/node": "^18",
+    "@typescript-eslint/parser": "^5.59.11",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-tailwindcss": "^3.12.1",
+    "nuxt": "^3.5.2",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.3"
+  }
+}
