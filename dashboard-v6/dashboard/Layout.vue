@@ -1,0 +1,44 @@
+<script setup lang="ts">
+import { useRoute } from "vue-router";
+import { onMounted, watch } from "vue";
+
+import TopBar from "./TopBar.vue";
+import Overlay from "./Overlay.vue";
+import Sidebar from "./sidebar/Sidebar.vue";
+import { closeSidebar, sidebarOpen } from "./store";
+
+const route = useRoute();
+
+onMounted(() => {
+  // set the html tag attribute overflow to hidden when component is mounted
+  document.documentElement.style.overflow = "hidden";
+});
+
+watch(route, () => {
+  // close sidebar on route changes when viewport is less than 1024px
+  if (sidebarOpen && window.innerWidth < 1024) {
+    closeSidebar();
+  }
+});
+</script>
+
+<!-- lg:w-[calc(100%-16rem)] class get the remained width of the main tag from lg:viewport by subtracting
+(the total width by the width of the sidebar component which is w-64 = 16rem)-->
+<template>
+  <div class="relative h-screen overflow-hidden">
+    <div class="flex items-start">
+      <Overlay />
+      <Sidebar mobile-orientation="end" />
+      <div
+        class="flex h-screen w-full flex-col bg-[#25074D] pl-0 lg:w-[calc(100%-16rem)]"
+      >
+        <TopBar />
+        <main
+          class="h-screen overflow-auto bg-gray-100 px-2 pb-36 pt-4 md:px-4 md:pb-8 lg:rounded-tl-3xl lg:px-6"
+        >
+          <slot />
+        </main>
+      </div>
+    </div>
+  </div>
+</template>
